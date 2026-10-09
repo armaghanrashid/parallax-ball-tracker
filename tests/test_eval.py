@@ -29,6 +29,8 @@ def test_table_is_markdown_with_one_row_per_sport():
 
 def test_main_prints_table_and_can_write_json(tmp_path, capsys):
     out = tmp_path / "metrics.json"
-    ev.main(["--n", "1", "--json", str(out)])
+    plot = tmp_path / "margins.png"
+    ev.main(["--n", "1", "--json", str(out), "--plot", str(plot)])
+    assert plot.stat().st_size > 1000
     assert "| tennis" in capsys.readouterr().out
     assert json.loads(out.read_text())["tennis"]["n"] == 1
