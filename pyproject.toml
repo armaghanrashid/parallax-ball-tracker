@@ -1,0 +1,22 @@
+[project]
+name = "parallax-ball-tracker"
+version = "0.1.0"
+description = "Two-camera multi-sport ball tracking with 3D reconstruction and line calls"
+requires-python = ">=3.12"
+
+[tool.setuptools]
+packages = ["parallax", "parallax.sim", "parallax.vision", "parallax.rules", "cloud"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "N"]
+ignore = ["N803", "N806"]

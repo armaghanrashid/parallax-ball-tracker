@@ -1,0 +1,9 @@
+numpy==2.5.3
+scipy==1.18.1
+opencv-python-headless==5.0.0.93
+matplotlib==3.11.2
+pillow==12.3.0
+boto3==1.43.110
+moto[s3,dynamodb]==5.2.3
+pytest==9.1.1
+ruff==0.16.10
